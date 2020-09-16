@@ -19,12 +19,10 @@ $(document).ready(function(){
            self.addClass("style-yellow");
            self.removeClass("style-green");
            self.text(numRandom);
-           $(".numero").text(numRandom);
          } else if (numRandom > 5){
            self.addClass("style-green");
            self.removeClass("style-yellow");
            self.text(numRandom);
-           $(".numero").text(numRandom);
          }
        },
        error: function (richiesta, stato, errori) {
