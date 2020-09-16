@@ -3,7 +3,7 @@
 // Se è <= 5 il quadrato diventa giallo, se è > di 5 il quadrato diventa verde.
 // Il numero ottenuto appare al centro del quadrato.
 $(document).ready(function(){
-  $("body").click(function() {
+  $(".boxes").click(function() {
 
     var endpoint = "https://flynn.boolean.careers/exercises/api/random/int";
 
@@ -13,6 +13,7 @@ $(document).ready(function(){
        "method" : "GET",
        "success" : function (data, stato) {
          var numRandom = data.response;
+         var box = $(".boxes");
          if(numRandom <= 5){
            $(".boxes").addClass("style-yellow");
            $(".boxes").removeClass("style-green");
