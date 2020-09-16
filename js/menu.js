@@ -6,6 +6,7 @@ $(document).ready(function(){
   $(".boxes").click(function() {
 
     var endpoint = "https://flynn.boolean.careers/exercises/api/random/int";
+    var self = $(this);
 
     $.ajax(
      {
@@ -13,14 +14,16 @@ $(document).ready(function(){
        "method" : "GET",
        "success" : function (data, stato) {
          var numRandom = data.response;
-         var box = $(".boxes");
+
          if(numRandom <= 5){
-           $(".boxes").addClass("style-yellow");
-           $(".boxes").removeClass("style-green");
+           self.addClass("style-yellow");
+           self.removeClass("style-green");
+           self.text(numRandom);
            $(".numero").text(numRandom);
          } else if (numRandom > 5){
-           $(".boxes").addClass("style-green");
-           $(".boxes").removeClass("style-yellow");
+           self.addClass("style-green");
+           self.removeClass("style-yellow");
+           self.text(numRandom);
            $(".numero").text(numRandom);
          }
        },
